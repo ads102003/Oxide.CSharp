@@ -12,7 +12,7 @@ jobs:
       name: Build solution
       uses: ads102003/Actions/.github/workflows/project-build.yml@main
       with:
-        branch-postfix: ${{ github.ref_name }}
+        branch-postfix: ${{ github.ref_name != 'master' && github.ref_name }}
         version-prefix: '2.0'
         project-name: Oxide.CSharp
       secrets: inherit
